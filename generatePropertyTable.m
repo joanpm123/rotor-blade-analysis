@@ -2,7 +2,7 @@
 % Calls the beam_section_properties mesher at multiple chord values
 % (and optionally multiple NACA profiles) to build a lookup table.
 %
-% The beam axis lives at c/4, so all offsets (y_sc, y_cg) are stored
+% The beam axis lives at sc, so all offsets (y_c4, y_cg) are stored
 % relative to that line.
 %
 % OUTPUT: saves 'propertyTable.mat' containing struct array propTable
@@ -10,16 +10,16 @@
 %   .chord    – chord length [m]
 %   .naca_h   – NACA half-thickness parameter [m]
 %   .A        – cross-section area [m^2]
-%   .y_cg     – centroid y-offset from c/4 [m]
-%   .z_cg     – centroid z-offset from c/4 [m]
-%   .y_sc     – shear-centre y-offset from c/4 [m]
-%   .z_sc     – shear-centre z-offset from c/4 [m]
+%   .y_cg     – centroid y-offset from sc [m]
+%   .z_cg     – centroid z-offset from sc [m]
+%   .y_c4     – aero-centre y-offset from sc [m]
+%   .z_c4     – aero-centre z-offset from cs [m]
 %   .Iy_cm    – 2nd moment about y' through centroid [m^4]
 %   .Iz_cm    – 2nd moment about z' through centroid [m^4]
 %   .Iyz_cm   – product of inertia through centroid [m^4]
-%   .Iy_c4    – 2nd moment about y' through c/4 [m^4]
-%   .Iz_c4    – 2nd moment about z' through c/4 [m^4]
-%   .Iyz_c4   – product of inertia through c/4 [m^4]
+%   .Iy_sc    – 2nd moment about y' through sc [m^4]
+%   .Iz_sc    – 2nd moment about z' through sc [m^4]
+%   .Iyz_sc   – product of inertia through sc [m^4]
 %   .J        – torsional constant = kt * Isc [m^4]
 %   .Isc      – polar moment about SC [m^4]
 %   .ky       – shear correction factor (chord direction)
